@@ -5,12 +5,28 @@ const metadata = {
   title: 'Equipe',
 };
 
-const teamMembers = [
-  { name: 'Frederico Pedrosa', role: 'PhD', image: '/images/members/default.png' },
-  { name: 'Flávio Figueiredo', role: 'PhD', image: '/images/members/flavio.png' },
-  { name: 'Ivan Moriá Borges', role: 'Doutorando em Música', image: '/images/members/ivan.png' },
-  { name: 'Lucas Ferreira', role: 'PhD', image: '/images/members/lucas_f.png' },
+const professors = [
+  { name: 'Flávio Figueiredo', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/flavio.png' },
+  { name: 'Lucas Ferreira', role: 'Professor Adjunto do Departamento de Ciência da Computação', image: '/images/members/lucas.png' },
+  { name: 'Frederico Pedrosa', role: 'Professor Adjunto da Escola de Música', image: '/images/members/fred.png' },
+  { name: 'José Henrique Padovani Velloso', role: 'Professor Adjunto da Escola de Música', image: '/images/members/padovani.png' },
+  { name: 'Alexei Manso Correa Machado', role: 'Professor Adjunto da Faculdade de Medicina', image: '/images/members/alexei.png' }
 ];
+
+const phd_students = [
+  { name: 'Ivan Moriá Borges Rodrigues', role: 'Doutorando em Música', image: '/images/members/ivan.png' }
+]
+
+const msc_students = [
+  { name: 'Felipe Ferreira Marra', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Fernando Tonucci', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Giovanni Martinelli', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Larissa D. Gomide', role: 'Mestranda em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Manoela Werneck ', role: 'Mestranda em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Pedro Henrique', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' },
+  { name: 'Thiago Martin Poppe', role: 'Mestrando em Ciência da Computação', image: '/images/members/default.png' }
+]
+
 ---
 
 <Layout metadata={metadata}>
@@ -22,10 +38,66 @@ const teamMembers = [
 
   </section>
 
-  <section class="container mx-auto py-10 px-6">    
+  <section class="container mx-auto py-10 px-6"> 
+   <h2 class="text-3xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 
+               intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      Pesquisadores
+    </h2>   
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
-        teamMembers.map((member) => (
+        professors.map((member) => (
+          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+            />
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+    <section class="container mx-auto py-10 px-6"> 
+   <h2 class="text-3xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 
+               intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      Estudantes de Doutorado
+    </h2>   
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        phd_students.map((member) => (
+          <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
+                      transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
+                      intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+            <img
+              src={member.image}
+              alt={member.name}
+              class="w-24 h-24 md:w-32 md:h-32 rounded-full object-cover transition-all duration-300 hover:scale-110"
+            />
+            <div>
+              <h2 class="text-xl font-semibold text-gray-900 dark:text-white">{member.name}</h2>
+              <p class="text-gray-600 dark:text-gray-300">{member.role}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="container mx-auto py-10 px-6"> 
+   <h2 class="text-3xl md:text-3xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 
+               intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+      Estudantes de Mestrado
+    </h2>   
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        msc_students.map((member) => (
           <div class="team-card flex items-center bg-white dark:bg-gray-800 shadow-lg rounded-xl p-6 gap-6 
                       transition-transform duration-300 hover:scale-105 hover:shadow-2xl 
                       intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
