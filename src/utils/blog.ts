@@ -45,6 +45,7 @@ const categorySubtitles: Record<string, string> = {
   Projetos: "Saiba mais sobre os projetos desenvolvidos.",
   News: "Notícias sobre tópicos de interesse",
   Blog: "Posts técnicos na interseção IA/Música.",
+  Publicações: "Veja nossas publicações.",
 };
 
 const getNormalizedPost = async (post: CollectionEntry<'post'>): Promise<Post> => {
